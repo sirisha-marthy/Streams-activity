@@ -56,6 +56,14 @@ class StreamProcessor(object):
                    # together.
         total = 0  # The running total of sums.
 
+        while count < 10 and total < 200:
+            digits = self._stream.read(2)
+            if len(digits) < 2:
+                break
+            count += 1
+            n = int(digits)
+            total += n
+
         # TODO: WRITE CODE HERE:
 
         # Just some example syntax, you can read two digits from the head of the
